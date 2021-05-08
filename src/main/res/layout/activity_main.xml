@@ -1,0 +1,234 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tanka.iot.MainActivity" >
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:titleTextColor="@android:color/white"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        />-->
+
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/gauge1"
+        android:layout_width="290dp"
+        android:layout_height="322dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:gaugeDividerColor="@color/md_green_400"
+        app:gaugeDividerDrawFirst="true"
+        app:gaugeDividerDrawLast="true"
+        app:gaugeDividerStep="10"
+        app:gaugeEndValue="100"
+        app:gaugePointEndColor="@color/md_blue_900"
+        app:gaugePointStartColor="@color/md_blue_300"
+        app:gaugeStartAngle="180"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="@color/md_grey_400"
+        app:gaugeStrokeWidth="20dp"
+        app:gaugeSweepAngle="180" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gauge1"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="124dp"
+        android:text="0/100"
+        android:textSize="30dp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text1_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="-64dp"
+        android:text="Soil Moisture"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_add_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gauge1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Add 1 Liter of Water" />
+
+    <Button
+        android:id="@+id/btn_add_water2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_add_water"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Add 1/2 liter Water" />
+
+    <Button
+        android:id="@+id/btn_add_npk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_add_water2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="Add 10 ml Nutrient" />
+
+    <Button
+        android:id="@+id/btn_add_npk2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_add_npk"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="add 5ml Nutrient" />
+
+    <TextView
+        android:id="@+id/txt_N"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_add_water2"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/btn_add_water2"
+        android:text="N: XX mg/Kg" />
+
+    <TextView
+        android:id="@+id/txt_P"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_N"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/btn_add_water2"
+        android:text="P: XXmg/Kg" />
+
+    <TextView
+        android:id="@+id/txt_K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_P"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/btn_add_water2"
+        android:text="K: XX mg/g" />
+
+    <ImageView
+        android:id="@+id/imgHumid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/outline_opacity_black_24"
+        android:layout_alignTop="@id/gauge1"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/txtHumid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/outline_opacity_black_24"
+        android:layout_below="@id/imgHumid"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="30dp"
+        android:text="60 %"/>
+
+    <ImageView
+        android:id="@+id/imgTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/gauge1"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="151dp"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/outline_thermostat_black_24" />
+
+    <TextView
+        android:id="@+id/txtTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/outline_opacity_black_24"
+        android:layout_below="@id/imgTemp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:textSize="30dp"
+        android:text="30 *C"/>
+
+    <!--    <pl.pawelkleczkowski.customgauge.CustomGauge-->
+<!--        android:id="@+id/gauge2"-->
+<!--        android:layout_width="140dp"-->
+<!--        android:layout_height="140dp"-->
+<!--        android:layout_below="@+id/gauge1"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:gaugeEndValue="800"-->
+<!--        app:gaugePointEndColor="@color/md_blue_800"-->
+<!--        app:gaugePointStartColor="@color/md_blue_300"-->
+<!--        app:gaugeStartAngle="135"-->
+<!--        app:gaugeStartValue="200"-->
+<!--        app:gaugeStrokeCap="ROUND"-->
+<!--        app:gaugeStrokeColor="@color/md_grey_400"-->
+<!--        app:gaugeStrokeWidth="10dp"-->
+<!--        app:gaugeSweepAngle="270" />-->
+
+<!--    <pl.pawelkleczkowski.customgauge.CustomGauge-->
+<!--        android:id="@+id/gauge3"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="-80dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingRight="10dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:gaugeEndValue="100"-->
+<!--        app:gaugePointEndColor="@color/md_green_500"-->
+<!--        app:gaugePointStartColor="@color/md_red_500"-->
+<!--        app:gaugeStartAngle="180"-->
+<!--        app:gaugeStartValue="0"-->
+<!--        app:gaugeStrokeCap="BUTT"-->
+<!--        app:gaugeStrokeColor="@color/md_grey_400"-->
+<!--        app:gaugeStrokeWidth="20dp"-->
+<!--        app:gaugeSweepAngle="180"-->
+<!--        app:gaugeDividerSize="1"-->
+<!--        app:gaugeDividerColor="@color/md_yellow_500"-->
+<!--        app:gaugeDividerStep="10"-->
+<!--        app:gaugeDividerDrawFirst="false"-->
+<!--        app:gaugeDividerDrawLast="true"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignBottom="@+id/gauge2"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="48dp"-->
+<!--        android:text="200/1200"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold" />-->
+
+</RelativeLayout>
